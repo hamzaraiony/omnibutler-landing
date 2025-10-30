@@ -961,7 +961,17 @@
             card.style.transition = `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`;
             observer.observe(card);
         });
+        
+        // Lead form
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('Lead:', this.firstName.value, this.email.value);
+            this.style.display = 'none';
+            document.getElementById('formSuccess').style.display = 'block';
+            setTimeout(() => document.querySelector('#demo').scrollIntoView({ behavior: 'smooth' }), 2000);
+        });
     </script>
 </body>
 </html>
+
 
